@@ -1,0 +1,9 @@
+{
+  "source_sha256": "320b441fe0fbc11b70c1cccd173f82af5dbf51fff131f8bdb808df57c21cb2c9",
+  "tree_count": 200,
+  "node_count": 305722,
+  "binary_bytes": 4586230,
+  "gzip_bytes": 1290404,
+  "combinations": 279936,
+  "test_rows": 11814
+}

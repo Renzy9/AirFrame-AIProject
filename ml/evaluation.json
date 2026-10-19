@@ -1,0 +1,173 @@
+{
+  "project": "Airline Passenger Satisfaction \u2014 Recommendation Prediction",
+  "source_records": 64740,
+  "records": 64647,
+  "airlines": 109,
+  "features": [
+    "Seat_Comfort",
+    "Cabin_Staff_Service",
+    "Food_and_Beverages",
+    "Inflight_Entertainment",
+    "Ground_Service",
+    "Value_for_Money",
+    "Wifi_Connectivity"
+  ],
+  "input_count": 7,
+  "training_rows": 52833,
+  "test_rows": 11814,
+  "training_dates": [
+    "2015-01-05",
+    "2022-12-31"
+  ],
+  "test_dates": [
+    "2023-01-01",
+    "2025-08-07"
+  ],
+  "test_accuracy": 0.9513289317758592,
+  "balanced_test_accuracy": 0.9467121801633369,
+  "balanced_validation_accuracy": 0.9414216461337442,
+  "balanced_cv_scores": [
+    0.9402983426209666,
+    0.9459489502014606,
+    0.9380176455788053
+  ],
+  "training_accuracy": 0.947286733670244,
+  "comparison": [
+    {
+      "Model": "Random Forest",
+      "Accuracy": 0.9513289317758592,
+      "Balanced Accuracy": 0.9467121801633369
+    },
+    {
+      "Model": "Logistic Regression",
+      "Accuracy": 0.9482816996783477,
+      "Balanced Accuracy": 0.9464165029717728
+    },
+    {
+      "Model": "Average-rating rule",
+      "Accuracy": 0.9352463179278822,
+      "Balanced Accuracy": 0.927144192568357
+    },
+    {
+      "Model": "Majority class",
+      "Accuracy": 0.7243947858472998,
+      "Balanced Accuracy": 0.5
+    }
+  ],
+  "best_parameters": {
+    "classifier__max_depth": 12,
+    "classifier__min_samples_leaf": 5
+  },
+  "logistic_best_parameters": {
+    "classifier__C": 0.1
+  },
+  "rule_cutoff": 3,
+  "rule_balanced_validation_accuracy": 0.9289650831298948,
+  "class_order": [
+    "No",
+    "Yes"
+  ],
+  "confusion_matrix": [
+    [
+      8190,
+      368
+    ],
+    [
+      207,
+      3049
+    ]
+  ],
+  "classification_report": {
+    "No": {
+      "precision": 0.9753483386923901,
+      "recall": 0.9569992989016125,
+      "f1-score": 0.9660867000884695,
+      "support": 8558.0
+    },
+    "Yes": {
+      "precision": 0.8923031899326895,
+      "recall": 0.9364250614250614,
+      "f1-score": 0.9138318597332534,
+      "support": 3256.0
+    },
+    "accuracy": 0.9513289317758592,
+    "macro avg": {
+      "precision": 0.9338257643125398,
+      "recall": 0.9467121801633369,
+      "f1-score": 0.9399592799108615,
+      "support": 11814.0
+    },
+    "weighted avg": {
+      "precision": 0.95246066268413,
+      "recall": 0.9513289317758592,
+      "f1-score": 0.9516849936218551,
+      "support": 11814.0
+    }
+  },
+  "training_support": {
+    "No": 31345,
+    "Yes": 21488
+  },
+  "test_support": {
+    "No": 8558,
+    "Yes": 3256
+  },
+  "feature_importance": [
+    {
+      "Feature": "Value_for_Money",
+      "Importance": 0.3971269958088582
+    },
+    {
+      "Feature": "Cabin_Staff_Service",
+      "Importance": 0.1858235403155852
+    },
+    {
+      "Feature": "Seat_Comfort",
+      "Importance": 0.1797005175864107
+    },
+    {
+      "Feature": "Ground_Service",
+      "Importance": 0.14510185930155067
+    },
+    {
+      "Feature": "Food_and_Beverages",
+      "Importance": 0.0726182563533008
+    },
+    {
+      "Feature": "Inflight_Entertainment",
+      "Importance": 0.01619322593164265
+    },
+    {
+      "Feature": "Wifi_Connectivity",
+      "Importance": 0.0034356047026517923
+    }
+  ],
+  "forward_validation_folds": [
+    {
+      "training_rows": 30500,
+      "validation_rows": 12174,
+      "training_last_date": "2018-12-31",
+      "validation_first_date": "2019-01-01"
+    },
+    {
+      "training_rows": 42674,
+      "validation_rows": 3538,
+      "training_last_date": "2020-12-31",
+      "validation_first_date": "2021-01-01"
+    },
+    {
+      "training_rows": 46212,
+      "validation_rows": 6621,
+      "training_last_date": "2021-12-31",
+      "validation_first_date": "2022-01-01"
+    }
+  ],
+  "test_used_for_model_selection": false,
+  "evaluation_note": "The same historical holdout was previously evaluated for the six-rating model; this seven-rating extension was requested by the user, not selected by test score. A new future holdout is needed for fresh external validation.",
+  "text_key_overlap_train_test": 0,
+  "target_from_overall_rating": false,
+  "meets_90_percent_balanced_accuracy": true,
+  "record_count_requirement_met": true,
+  "synthetic_records_added": 0,
+  "elapsed_seconds": 37.420583724975586
+}

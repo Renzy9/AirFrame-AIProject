@@ -1,0 +1,7 @@
+{
+  "all_rating_combinations": 279936,
+  "matching_test_predictions": 11814,
+  "maximum_probability_error": 3.3306690738754696e-16,
+  "reproduced_test_accuracy": 0.9513289317758592,
+  "input_validation": "passed"
+}

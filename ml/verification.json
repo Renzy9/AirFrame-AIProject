@@ -1,0 +1,10 @@
+{
+  "original_rating_checks": 100,
+  "features": 7,
+  "test_prediction_matches": 11814,
+  "executed_code_cells": 23,
+  "embedded_graphs": 3,
+  "no_train_test_text_overlap": true,
+  "test_accuracy": 0.9513289317758592,
+  "balanced_test_accuracy": 0.9467121801633369
+}

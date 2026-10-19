@@ -1,0 +1,78 @@
+{
+  "title": "Airline Travel Reviews Data (Skytrax)",
+  "authors": [
+    "Rushikesh Borse",
+    "Anirudh Mishra"
+  ],
+  "source_url": "https://data.mendeley.com/datasets/vgjk58vf8h/1",
+  "doi": "10.17632/vgjk58vf8h.1",
+  "published": "2026-03-25",
+  "version": 1,
+  "download_url": "https://data.mendeley.com/public-files/datasets/vgjk58vf8h/files/ddfdec3a-4cb6-436a-ad1f-8ea70a85e4da/file_downloaded",
+  "source_sha256": "30eab5be4c53b3cad8defa9ff49228caec0c1ec093aba0cc45a978aece2ca9d9",
+  "source_filename": "Skytrax Airline Review Data.xlsx",
+  "license": "CC BY 4.0 as stated by the repository",
+  "collection": "The depositors identify Skytrax passenger reviews as the source and document removing passenger names and some other fields. No respondent identity or verified-flight audit was performed.",
+  "geography": "International, not a Philippine-only survey; international data explicitly authorized by the user.",
+  "target": "Original self-reported recommended yes/no, not a satisfaction label reconstructed from overall rating.",
+  "record_unit": "One public airline review, not necessarily one unique passenger or independently verified flight.",
+  "input_count": 7,
+  "features": [
+    "Seat_Comfort",
+    "Cabin_Staff_Service",
+    "Food_and_Beverages",
+    "Inflight_Entertainment",
+    "Ground_Service",
+    "Value_for_Money",
+    "Wifi_Connectivity"
+  ],
+  "rating_scale": "1 to 5; missing or out-of-range values are imputed using training data only.",
+  "counts": {
+    "source_records": 64740,
+    "missing_date_or_target_removed": 1,
+    "conflicting_text_label_records_removed": 2,
+    "exact_duplicate_records_removed": 64,
+    "additional_repeated_text_records_removed": 19,
+    "all_seven_ratings_missing_removed": 7,
+    "prepared_records": 64647
+  },
+  "invalid_ratings_replaced_with_missing": {
+    "Seat_Comfort": 0,
+    "Cabin_Staff_Service": 0,
+    "Food_and_Beverages": 0,
+    "Inflight_Entertainment": 0,
+    "Ground_Service": 0,
+    "Value_for_Money": 0,
+    "Wifi_Connectivity": 0
+  },
+  "airlines": 109,
+  "source_review_dates": [
+    "2015-01-05",
+    "2025-08-07"
+  ],
+  "prepared_review_dates": [
+    "2015-01-05",
+    "2025-08-07"
+  ],
+  "split": "Training reviews before 2023-01-01; held-out reviews from 2023-01-01 onward.",
+  "not_inputs": [
+    "over_all_rating",
+    "review_header",
+    "review_text",
+    "recommended",
+    "Airline",
+    "Review_Date",
+    "Review_ID",
+    "aircraft",
+    "route",
+    "date_flown"
+  ],
+  "limitations": [
+    "Post-flight recommendation classification, not pre-flight satisfaction forecasting.",
+    "Opt-in online reviews may not represent all passengers.",
+    "Repeat reviewers cannot be identified because passenger identities are absent.",
+    "International historical results do not establish performance for Philippine airlines or current 2026 operations."
+  ],
+  "synthetic_records_added": 0,
+  "prepared_csv_sha256": "3d5a7d2f3a84fbdfbad40b4e02b70d4a9387e01e4166977e05daf54f2f07264b"
+}
