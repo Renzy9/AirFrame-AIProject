@@ -1,0 +1,15 @@
+RUN AIRFRAME ON YOUR COMPUTER
+
+1. Double-click START-LOCAL.cmd in this folder.
+2. Open http://127.0.0.1:5173 in any browser.
+3. Keep the server window open while using the website.
+4. Press Ctrl+C in the server window when finished.
+
+You already have Node.js available on this computer. No npm install, build, ChatGPT login or internet connection is needed for local predictions.
+
+If you copy the project to another computer, that computer needs Node.js 22.13 or newer to run the backend. The webpage itself uses HTML, CSS and JavaScript.
+
+Do not open index.html alone for predictions. Use the local address above so that the form can reach the trained model on the local server.
+
+In VS Code, you can instead open this folder, choose Terminal > New Terminal, and run:
+node server.mjs

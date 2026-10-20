@@ -1,69 +1,59 @@
-# Airframe — Airline Passenger Ratings
+# Airframe — HTML and CSS website
 
-A ready-to-edit Visual Studio Code project. The website has seven service ratings and a recommendation result. The trained Random Forest runs on the backend; model details are kept out of the website.
+Your interface is now plain HTML and CSS with vanilla JavaScript. It keeps the same design and seven ratings. The existing trained Random Forest still runs in the backend.
 
-## 1. Open and run in Visual Studio Code
+## Run locally on this Windows computer
 
-1. Extract the ZIP. Open the **Airframe-GitHub-VSCode** folder in VS Code, or double-click **Airframe.code-workspace**.
-2. Install Node.js **22.13 or newer** with npm, then restart VS Code if you just installed it. Check with `node --version` and `npm --version`.
-3. Choose **Terminal > New Terminal**. Run:
+Double-click **START-LOCAL.cmd**, then open **http://127.0.0.1:5173**. Keep its window open while using the website. Press Ctrl+C to stop. Node.js is already available on this computer; no npm install or build is needed. See RUN-LOCALLY.txt for the short instructions.
 
-```sh
-npm ci
-npm run dev
-```
+## Use the published website
 
-4. Open **http://localhost:5173** (or the Local URL printed in the terminal).
-5. Keep the terminal running. Press **Ctrl+C** to stop.
+https://airframe-passenger-experience.agilepeony8.chatgpt.site/
 
-No API key, ChatGPT account, Python installation or model retraining is needed to run the local website. Do not use the Live Server extension: this app needs its backend. If Windows PowerShell blocks npm.ps1, use `npm.cmd ci` and `npm.cmd run dev`, or select Command Prompt as the terminal profile.
+Open this link in your browser. You do not install Node.js or another app to use the published website. Its access remains private, so sign in with your authorized ChatGPT account when prompted.
 
-Optional VS Code tasks are available under **Terminal > Run Task**.
+## Edit in Visual Studio Code
 
-## 2. Push to your GitHub repository
+Open this folder in VS Code, or open Airframe.code-workspace.
 
-Install Git if it is not already available. Create an empty repository in your GitHub account. In this project's VS Code terminal, run the following, replacing the example URL with your own repository URL:
+- index.html — all page content, seven rating groups and result section.
+- styles.css — the original colors, layout and mobile styles.
+- app.js — rating interaction, validation, reset and a request to /api/predict.
+- favicon.svg — logo.
+- backend/ — the fitted model and server prediction code.
+- server.mjs — a small optional server for local testing or your own hosting.
+- ml/ — executed notebook, CSV, Python model, evaluation and graphs.
 
-```sh
-git init
-git add .
-git commit -m "Add Airframe passenger rating project"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
-git push -u origin main
-```
+There is no React, JSX, TypeScript or frontend framework in this portable package. HTML defines the structure, CSS styles it, and JavaScript submits ratings. HTML and CSS alone cannot send ratings to a prediction endpoint.
 
-Sign in to GitHub when Git prompts you. Alternatively, use VS Code's Source Control > Initialize Repository > Commit > Publish Branch. This folder contains no existing Git history, account tokens or private Sites project ID. The .gitignore excludes installed packages, build output and local secrets. Keep package-lock.json and the fitted model files tracked.
+Double-clicking index.html previews the design. Actual predictions need the backend, so use the published link or run a server. VS Code Live Server and GitHub Pages serve static files only and do not run the prediction backend.
 
-Uploading to GitHub stores your source code; it does not automatically host the app. GitHub Pages cannot run this prediction backend. The current build targets Cloudflare Workers through Vinext/Vite; deploying outside your computer requires separate hosting configuration. The existing private website is unchanged by this export.
+## Optional local server
 
-## 3. Project folders
-
-- `app/page.tsx`: rating form and result.
-- `app/globals.css`: colors and responsive styling.
-- `app/api/predict/route.ts`: backend prediction endpoint.
-- `lib/server/`: fitted Random Forest export and inference code. Keep these files.
-- `ml/`: executed notebook, CSV, Python model, graphs, requirements and evaluation. These are not publicly served by the website.
-- `checks/`: reference predictions and verification scripts.
-- `docs/MODEL-AND-VERIFICATION.md`: model notes and measured results.
-- `.vscode/`: optional editor setup and tasks.
-
-The notebook and CSV are together in `ml/`. For training only, create a Python environment, install `ml/requirements.txt`, then open the notebook in Jupyter or VS Code and run its cells. The website already includes the trained model, so this is optional.
-
-## 4. Check or build
+Only if you want to run the full backend on your own computer: install Node.js 22.13 or newer, then open this folder's terminal and run:
 
 ```sh
-npm run typecheck
-npm run test:model
-npm run build
-npm start
+node server.mjs
 ```
 
-`npm start` previews the production build at the address printed by Wrangler. `npm run test:site` checks a running website at port 5173. Node modules are deliberately excluded from the ZIP and will be installed by npm ci. This project uses React/TypeScript with Vinext, Vite and a Cloudflare-compatible backend.
+Open http://127.0.0.1:5173. No npm install, build step, API key or model retraining is needed for this portable package. Stop with Ctrl+C. A server host can set PORT and HOST as needed.
 
-## Dataset attribution
+The model is stored outside the public assets. Only the six named frontend assets are served; notebook, dataset and backend files have no public download route. Do not serve the whole folder as static assets on production hosting.
 
-Borse & Mishra (2026), *Airline Travel Reviews Data (Skytrax)*, Mendeley Data v1, DOI 10.17632/vgjk58vf8h.1, CC BY 4.0.
-https://data.mendeley.com/datasets/vgjk58vf8h/1
+## GitHub repository
 
-The prepared CSV is a cleaned seven-rating derivative. See `ml/provenance.json` and `ml/PROJECT_GUIDE.md` for transformations and limitations. Preserve this attribution when sharing the dataset. Third-party source licenses are retained in the build and vendor folders.
+The project source is hosted at https://github.com/Renzy9/AirFrame-AIProject. Clone that repository to work with its history:
+
+```sh
+git clone https://github.com/Renzy9/AirFrame-AIProject.git
+```
+
+Pushing source changes to GitHub does not deploy the prediction server. Keep backend/model-data.js with the code because it contains the fitted forest.
+
+## Model and data
+
+The seven-feature trained model, labels and evaluation are unchanged. The backend applies the saved preprocessing and all 200 fitted trees, then returns only the Yes/No recommendation. It does not store submissions. The notebook and three graphs remain in ml/.
+
+Source: Borse & Mishra (2026), Airline Travel Reviews Data (Skytrax), Mendeley Data v1, DOI 10.17632/vgjk58vf8h.1, CC BY 4.0. https://data.mendeley.com/datasets/vgjk58vf8h/1
+
+The prepared CSV is a cleaned derivative; retain the attribution and ml/provenance.json when sharing it. See ml/PROJECT_GUIDE.md for results and limits. Icon notices are in ICONS-LICENSE.txt.

@@ -1,1 +1,0 @@
-export default function Footer() { return <footer className="footer"><span>airframe.</span><p>Every journey deserves to be heard.</p><span className="footer-plane" aria-hidden="true">✦</span></footer>; }

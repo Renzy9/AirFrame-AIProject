@@ -1,0 +1,15 @@
+{
+  "frontend": "HTML, CSS, vanilla JavaScript",
+  "website_build": "passed",
+  "api_cases": "passed",
+  "portable_server": "passed",
+  "browser_checks": [
+    "desktop and mobile layout",
+    "positive and negative results",
+    "optional Wi-Fi",
+    "single numeric rating",
+    "empty and all-missing validation",
+    "reset returns to zero rated"
+  ],
+  "model_changed": false
+}
